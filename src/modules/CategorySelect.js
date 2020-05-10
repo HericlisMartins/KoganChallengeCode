@@ -12,16 +12,20 @@ class ProductsCategories extends React.Component {
         super(props);
         this.state = {
             options:[],
-            selected: ''
+            selectedOption: "Air Conditioners",
+            endpoint:this.props.endpoint
         };
+        this.handleChange = this.handleChange.bind(this);
+        this.populateOptions(this.props.endpoint);
     }
 
-    handleChange = selected => {
-        this.setState({ selected: selected});
+    handleChange(event){
+        this.setState({selectedOption:event.target.value});
+        this.props.updateCategory(event.target.value);
     };
 
-    componentDidMount() {
-        this.props.data()
+    populateOptions(endpoint) {
+        this.props.data(endpoint)
         .then(res=>{
             const category=[];
             res.objects.map( (product, i)=>{ 
@@ -29,25 +33,25 @@ class ProductsCategories extends React.Component {
                     category.push( product.category);
                 return true;
             })
-
             this.setState({options: category})
+            this.setState({endpoint: endpoint})
         })
     }
 
     renderOptions() {
         return this.state.options.map((category, i) => {
-          return (
-              <MenuItem label={category} value={category} key={i} name={category}><em>{category}</em></MenuItem>
-          );
+            return (<MenuItem  label={category} value={category} key={i} name={category}><em>{category}</em></MenuItem>);
         });
     }
     
     render(){
+        if(this.props.endpoint!==this.state.endpoint)
+            this.populateOptions(this.props.endpoint)
         return (
             <div>
             <FormControl >
                 <InputLabel >Category: </InputLabel>
-                <Select className="selectInput" onChange={this.handleChange} defaultValue="Air Conditioners">
+                <Select className="selectInput" onChange={this.handleChange} value={this.state.selectedOption}>
                     {this.renderOptions()}
                 </Select>
             </FormControl>

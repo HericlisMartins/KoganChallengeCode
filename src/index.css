@@ -6,3 +6,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+iframe{width:100%; border:0; border-radius: 4px; overflow:hidden;}
