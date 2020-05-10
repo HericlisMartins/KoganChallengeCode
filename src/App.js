@@ -71,7 +71,11 @@ class App extends React.Component {
             <img src={Koganlogo} className="App-logo" alt="logo" />
           </Grid>
           <Grid item xs={6} className="code">
-            {<iframe src="https://codesandbox.io/embed/inspiring-hugle-xko7n?fontsize=10&hidenavigation=1&module=%2Fsrc%2Fdemo.js&theme=dark&view=editor" title="inspiring-hugle-xko7n" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>}
+            {<iframe
+              src="https://codesandbox.io/embed/priceless-hypatia-rhh3x?autoresize=1&fontsize=10&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark&view=editor"
+              title="priceless-hypatia-rhh3x"
+              allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr"
+              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>}
           </Grid>
           <Grid item xs>
             <img src={Hericlislogo} className="App-logo" alt="logo" />
