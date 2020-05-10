@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
-import Koganlogo from './koganlogo.png';
-import Hericlislogo from './logogreyhericlis.png';
+import Koganlogo from './img/koganlogo.png';
+import Hericlislogo from './img/logogreyhericlis.png';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
